@@ -1,0 +1,19 @@
+{
+    "status": "fail",
+    "message": "Validation failed",
+    "errors": [
+      {
+        "field": "username",
+        "message": "Username is required"
+      },
+      {
+        "field": "email",
+        "message": "Invalid email format"
+      },
+      {
+        "field": "password",
+        "message": "Password must be at least 8 characters"
+      }
+    ]
+    
+  }

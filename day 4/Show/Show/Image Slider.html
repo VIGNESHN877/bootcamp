@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider</title>
+  <style>
+    /* Inline CSS */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .slider {
+      position: relative;
+      width: 600px;
+      height: 400px;
+      overflow: hidden;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .slider img.active {
+      display: block;
+    }
+
+    .slider button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 18px;
+    }
+
+    .slider button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .slider button.prev {
+      left: 10px;
+    }
+
+    .slider button.next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider">
+    <!-- Images -->
+    <img src="image silder img/images fd.jpeg" class="active">
+    <img src="image silder img/image fd 2.jpg"alt="image 2">
+    <img src="image silder img/image fd 3.jpg"alt="image 3">
+    <img src="image silder img/image fd 4.jpg" alt="image 4">
+
+    <!-- Navigation Buttons -->
+    <button class="prev" onclick="prevImage()">&#10094;</button>
+    <button class="next" onclick="nextImage()">&#10095;</button>
+  </div>
+
+  <script>
+    // Inline JavaScript
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.slider img');
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+
+    // Optional: Auto-slide every 3 seconds
+    setInterval(nextImage, 3000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.MuiListItem-root {
+    border-bottom: 1px solid #eee;
+}
+
+.MuiListItem-secondaryAction {
+    padding-right: 90px;
+}
+
+.MuiChip-root {
+    margin-left: 16px;
+}
+
+.select-container {
+    position: relative;
+    margin: 10px 0;
+}
+
+select {
+    font-size: 14px; /* adjust the font size as needed */
+    line-height: 1.5;
+    width: 100%; /* full width */
+}
+
+.placeholder {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* prevents interference with clicks */
+}

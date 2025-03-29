@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Timer/Stopwatch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .display {
+            font-size: 3em;
+            margin: 20px;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+        }
+        .timer, .stopwatch {
+            width: 45%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Timer Section -->
+        <div class="timer">
+            <h2>Timer</h2>
+            <div class="display" id="timerDisplay">00:00:00</div>
+            <input type="number" id="timerInput" placeholder="Enter seconds" min="1">
+            <button onclick="startTimer()">Start</button>
+            <button onclick="stopTimer()">Stop</button>
+            <button onclick="resetTimer()">Reset</button>
+        </div>
+
+        <!-- Stopwatch Section -->
+        <div class="stopwatch">
+            <h2>Stopwatch</h2>
+            <div class="display" id="stopwatchDisplay">00:00:00</div>
+            <button onclick="startStopwatch()">Start</button>
+            <button onclick="stopStopwatch()">Stop</button>
+            <button onclick="resetStopwatch()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+       
+        let timerInterval;
+        let timerTime = 0;
+
+      
+        let stopwatchInterval;
+        let stopwatchTime = 0;
+
+       
+        function startTimer() {
+            const input = document.getElementById('timerInput').value;
+            if (input <= 0) {
+                alert("Please enter a valid time in seconds.");
+                return;
+            }
+            clearInterval(timerInterval);
+            timerTime = input;
+            updateTimerDisplay();
+            timerInterval = setInterval(() => {
+                if (timerTime <= 0) {
+                    clearInterval(timerInterval);
+                    alert("Time's up!");
+                } else {
+                    timerTime--;
+                    updateTimerDisplay();
+                }
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timerTime = 0;
+            updateTimerDisplay();
+        }
+
+        function updateTimerDisplay() {
+            const hours = Math.floor(timerTime / 3600);
+            const minutes = Math.floor((timerTime % 3600) / 60);
+            const seconds = timerTime % 60;
+            document.getElementById('timerDisplay').innerText =
+                `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        // Stopwatch Functions
+        function startStopwatch() {
+            clearInterval(stopwatchInterval);
+            stopwatchInterval = setInterval(() => {
+                stopwatchTime++;
+                updateStopwatchDisplay();
+            }, 1000);
+        }
+
+        function stopStopwatch() {
+            clearInterval(stopwatchInterval);
+        }
+
+        function resetStopwatch() {
+            clearInterval(stopwatchInterval);
+            stopwatchTime = 0;
+            updateStopwatchDisplay();
+        }
+
+        function updateStopwatchDisplay() {
+            const hours = Math.floor(stopwatchTime / 3600);
+            const minutes = Math.floor((stopwatchTime % 3600) / 60);
+            const seconds = stopwatchTime % 60;
+            document.getElementById('stopwatchDisplay').innerText =
+                `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>college details hide/show </title>
+</head>
+<body>
+    
+    <style>
+
+      .two{
+        margin-top: 150px;
+        text-align:center;
+        text-align: justify;
+        background: #f0e105;
+        color: #000;
+        margin-left: 50px;
+        margin-right: 50px;
+        padding: 100px 50px 100px 50px ;
+        border-radius: 30px;
+
+
+      } 
+      
+      .topic{
+              margin-top: 60px;
+              text-align:center;
+      }
+       .one{
+
+         border-radius: 2px;
+         margin-left: 60px;
+         margin-top: 30px;
+         border-radius: 25px;
+         border-color: red;
+       }
+       body{background-color: #868181a7;}
+    </style>
+
+
+    <div><center>
+        <h1 style="text-align: center; background: #000;color: #ffff;display: inline;" class="topic">My College Details</h1></center>
+        <br>
+        <button class="one" id="a" onclick="working()">show the details</button>
+        <p class="two" id="b">We started our journey in 1997 through Sri SNS Charitable Trust with a philanthropic outlook of serving the society in the 
+            fields of Education, Health and Industry. Ever since the inception of Sri SNS Charitable Trust, we have been expanding its
+             wide spectrum of educational streams from pre-school to advanced levels of graduate and post graduate programmes in Arts,
+              Science, Education, Management, Engineering, Pharmacy, Allied Health Sciences and Research centers. Every institution has
+               a well-defined vision, highly committed mission and dedicated faculty members to deliver the excellence in design thinking 
+               based education and innovation through our five pillar theme. Ranking among the top 5 colleges in Coimbatore, we opt to shine 
+               as one of the premier institutions in the country and become internationally recognized university worldwide.
+            </p>
+
+    </div>
+
+    <div>
+        
+        <button class="one" id="c" onclick="workings()">show the details</button>
+        <p class="two" id="d">We started our humble beginning in the year 2007 with engineering departments ECE, CSE, IT and EEE. In the year 2008,
+             a Post Graduate course – MBA; in 2009 Mechanical Engineering Department and Post Graduate Degree MCA were added.
+
+            The SNS College of Engineering slowly started spreading its wings with Civil in Undergraduate programme and Post Graduate – M.E. (CSE and AE) in the year 2011. 
+            In the same year, we developed our Research Centre in EEE departments. In the year 2012, we grew with M.E. (PED). The year saw the development of IT department when it started offering M.Tech (IT).
+             The  (Internal Quality Assurance Cell) was started with the aim of improving the quality of educating the students and developing the faculty.
+            
+            The year 2015 is seen by our institution as a stepping stone to success. Our growth was seen by the NAAC and hence it accredited us with A grade in 2015.
+             In 2016, the Mechanical department got Research Centre. In the year 2017, the departments CSE, ECE and EEE got Permanently Affiliated to Anna University.
+              Accredited by NBA: UG Programmes of ECE, EEE and Mechanical Engineering.
+            </p>
+
+    </div>
+    <script>
+
+     
+      function working() {
+
+            var  sns =document.getElementById("b");
+        var snsce =document.getElementById("a");
+        console.log(b);
+        console.log(a);
+
+        if(sns.style.display === "none"){
+
+            sns.style.display = "block";
+            snsce.style.display = "hide";
+        }
+        else {
+            sns.style.display = "none";
+            snsce.style.display = "show";
+        }
+      }
+              function workings() {
+
+                var  snsct =document.getElementById("d");
+                var snscece =document.getElementById("c");
+                console.log(b);
+                console.log(a);
+
+                if(snsct.style.display === "none"){
+
+                snsct.style.display = "block";
+                snscece.style.display = "hide";
+                }
+                else {
+                snsct.style.display = "none";
+                snscece.style.display = "show";
+                }
+                }
+
+
+
+    </script>
+</body>
+</html>

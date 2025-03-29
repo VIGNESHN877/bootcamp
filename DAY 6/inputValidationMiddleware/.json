@@ -1,0 +1,16 @@
+[
+{
+    "message": "Data received successfully",
+    "data": {
+        "name": "John Doe",
+        "age": 30,
+        "email": "john@example.com"
+    }
+},
+
+{
+    "error": "Missing required fields: name, age, email"
+},
+{
+    "error": "Invalid type for age, expected a number"
+}]
